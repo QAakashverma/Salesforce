@@ -39,8 +39,8 @@ public class NewLeadTest
 	public void login()
 	{
 		driver.navigate().to(url);
-		driver.findElement(By.cssSelector("input[id=\"username\"]")).sendKeys("akash.verma@qainfotech.com");
-		driver.findElement(By.cssSelector("input[id=\"password\"]")).sendKeys("akashvermaqa68");
+		driver.findElement(By.cssSelector("input[id=\"username\"]")).sendKeys("");
+		driver.findElement(By.cssSelector("input[id=\"password\"]")).sendKeys("");
 		driver.findElement(By.cssSelector("input[id=\"Login\"]")).click();
 	}
 

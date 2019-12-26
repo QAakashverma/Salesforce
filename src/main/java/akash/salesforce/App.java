@@ -22,8 +22,8 @@ public class App
     
     public static void login()
     {
-    	String username = "akash.verma@qainfotech.com";
-    	String password = "akashvermaqa68";
+    	String username = "";
+    	String password = "";
     	String authEndPoint = "https://login.salesforce.com/services/Soap/c/47.0";
     	EnterpriseConnection connection;
     	
