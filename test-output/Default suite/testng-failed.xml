@@ -5,7 +5,6 @@
     <classes>
       <class name="akash.salesforce.NewLeadTest">
         <methods>
-          <include name="tierUp"/>
           <include name="fill_form1"/>
           <include name="tierDown"/>
         </methods>

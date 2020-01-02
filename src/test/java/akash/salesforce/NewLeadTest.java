@@ -32,7 +32,9 @@ public class NewLeadTest
 	WebDriverWait wait;
 	String url = "https://qainfotech4832-dev-ed.lightning.force.com";
 	DataField datafield;
-	//@BeforeClass
+	String username = "";
+	String password = "";
+	@BeforeClass
 	public void tierUp()
 	{
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+File.separator+"src"+File.separator+"resources"+File.separator+"chromedriver.exe");
@@ -42,7 +44,7 @@ public class NewLeadTest
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver,30000);
-		datafield = new DataField(driver, "Lead");
+		datafield = new DataField(driver,username,password,"Lead");
 	}
 	//@Test(priority=1)
 	public void login()
@@ -66,9 +68,6 @@ public class NewLeadTest
 		click(By.cssSelector("a[title=\"New\"]"));
 	}
 
-	
-	
-	
 	@Test(priority=4)
 	public void fill_form1() throws ConnectionException
 	{

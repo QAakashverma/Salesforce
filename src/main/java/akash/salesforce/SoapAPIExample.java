@@ -30,9 +30,9 @@ public class SoapAPIExample
 	
 	
 	
-	public SoapAPIExample(String object)
+	public SoapAPIExample(String username,String pass,String object)
 	{
-        login();
+        login(username,pass);
         
         try {
         	describe_layout(object);
@@ -40,24 +40,8 @@ public class SoapAPIExample
             logout();
 		} catch (ConnectionException e) {
 			e.printStackTrace();
-		}
-        
-        print_map(labels);
+		}        
 	}
-	
-	
-	
-//	public static void main(String[] args)
-//	{
-//		SoapAPIExample soap = new SoapAPIExample("Lead");
-//		
-//		int x = soap.get_details().get("Mobile").get_byteLength();
-//		
-//		System.out.println(">>>>>>>>>>>>>" + x);
-//	}
-	
-	
-	
 	
 	public  Map<String, String> get_map()
 	{
@@ -98,10 +82,10 @@ public class SoapAPIExample
     	}
     }
     
-    private  void login()
+    private  void login(String user_name, String pass)
     {
-    	String username = "akash.verma@qainfotech.com";
-    	String password = "akashvermaqa68";
+    	String username = user_name;
+    	String password = pass;
     	String authEndPoint = "https://login.salesforce.com/services/Soap/c/47.0";
     	
     	
@@ -208,11 +192,11 @@ public class SoapAPIExample
     	
     } 
     
+    private class DLField
+    {
+    	public String label;
+    	public String object_name;
+    	public String dataType;
+    }
 }
 
-class DLField
-{
-	public String label;
-	public String object_name;
-	public String dataType;
-}

@@ -22,10 +22,12 @@ public class DataField
 	public Select select;
 	public TextArea textarea;
 	
-	public DataField(WebDriver d, String object)
+	
+	public DataField(WebDriver d,String username,String pass,String object)
 	{
-		SoapAPIExample soap = new SoapAPIExample(object);
+		SoapAPIExample soap = new SoapAPIExample(username,pass,object);
 		map_datatype = soap.get_map();
+		map_details = soap.get_details();
 		this.object = object;
 		driver = d;
 		input = new Input(driver, map_datatype);
@@ -35,7 +37,6 @@ public class DataField
 	
 	public Details_Of_Field get_details(String label)
 	{
-		map_details = soap.get_details();
 		return map_details.get(label);
 	}
 	
